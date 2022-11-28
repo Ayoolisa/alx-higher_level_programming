@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 str = "Holberton School"
 mul= str * 3
-print(f"%s"%(mul))
-print(f"%s"%(str[0:9]))
+print(f"{mul}")
+print(f"{str[0:9]}")
