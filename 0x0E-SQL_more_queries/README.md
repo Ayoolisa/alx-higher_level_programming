@@ -1,124 +1,121 @@
-```markdown
-# SQL - More queries
+# SQL - More Queries
 
-In this project, I continued to practice SQL queries, working with permissions, joins, and constraints.
+In this project, I continued practicing SQL queries, working with permissions, joins, and constraints.
 
 ## Usage 🐬
 
-Scripts `3-force_name.sql` forward take the database to query from as a MySQL command line argument.
-
-```
+**Scripts 3-force_name.sql** forward take the database to query from as a MySQL command line argument.
+```shell
 $ cat 3-force_name.sql | mysql -hlocalhost -uroot -p hbtn_0d_2
 ```
 
-Tasks `3-101` query from the database `hbtn_0d_tvshows.sql`.
+**Tasks 3-101** query from the database hbtn_0d_tvshows.sql.
 
-Tasks `102-103` query from the database `hbtn_0d_tvshows_rate.sql`.
+**Tasks 102-103** query from the database hbtn_0d_tvshows_rate.sql.
 
 ## Tasks 📃
 
-0. **My privileges!**
+1. **My Privileges!**
 
-- `0-privileges.sql`: MySQL script that lists all privileges of the users `user_0d_1` and `user_0d_2`.
+   - **0-privileges.sql:** MySQL script that lists all privileges of the users user_0d_1 and user_0d_2.
 
-1. **Root user**
+2. **Root User**
 
-- `1-create_user.sql`: MySQL script that creates the user `user_0d_1` with all privileges and password `user_0d_1_pwd`.
+   - **1-create_user.sql:** MySQL script that creates the user user_0d_1 with all privileges and password user_0d_1_pwd.
 
-2. **Read user**
+3. **Read User**
 
-- `2-create_read_user.sql`: MySQL script that creates the database `hbtn_0d_2` and user `user_0d_2` with password `user_0d_2_pwd`. `user_0d_2` only has SELECT privilege on the database `hbtn_0d_2`.
+   - **2-create_read_user.sql:** MySQL script that creates the database hbtn_0d_2 and user user_0d_2 with password user_0d_2_pwd. user_0d_2 only has SELECT privilege on the database hbtn_0d_2.
 
-3. **Always a name**
+4. **Always a Name**
 
-- `3-force_name.sql`: MySQL script that creates the table `force_name`.
+   - **3-force_name.sql:** MySQL script that creates the table force_name.
 
-    - **Description:**
-        - `id`: INT
-        - `name`: VARCHAR(256) (cannot be null)
+   Description:
+   - id: INT
+   - name: VARCHAR(256) (cannot be null)
 
-4. **ID can't be null**
+5. **ID Can't Be Null**
 
-- `4-never_empty.sql`: MySQL script that creates the table `id_not_null`.
+   - **4-never_empty.sql:** MySQL script that creates the table id_not_null.
 
-    - **Description:**
-        - `id`: INT (default value = 1)
-        - `name`: VARCHAR(256)
+   Description:
+   - id: INT (default value = 1)
+   - name: VARCHAR(256)
 
-5. **Unique ID**
+6. **Unique ID**
 
-- `5-unique_id.sql`: MySQL script that creates the table `unique_id`.
+   - **5-unique_id.sql:** MySQL script that creates the table unique_id.
 
-    - **Description:**
-        - `id`: INT (default value = 1, must be unique)
-        - `name`: VARCHAR(256)
+   Description:
+   - id: INT (default value = 1, must be unique)
+   - name: VARCHAR(256)
 
-6. **States table**
+7. **States Table**
 
-- `6-states.sql`: MySQL script that creates the database `hbtn_0d_usa` with a table `states`.
+   - **6-states.sql:** MySQL script that creates the database hbtn_0d_usa with a table states.
 
-    - **States description:**
-        - `id`: INT (unique, auto-generated, cannot be null, and is a primary key)
-        - `name`: VARCHAR(256) (cannot be null)
+   States description:
+   - id: INT (unique, auto-generated, cannot be null and is a primary key)
+   - name: VARCHAR(256) (cannot be null)
 
-7. **Cities table**
+8. **Cities Table**
 
-- `7-cities.sql`: MySQL script that creates the database `hbtn_0d_usa` with a table `cities`.
+   - **7-cities.sql:** MySQL script that creates the database hbtn_0d_usa with a table cities.
 
-    - **Cities description:**
-        - `id`: INT (unique, auto-generated, cannot be null, and is a primary key)
-        - `state_id`: INT (cannot be null, foreign key that references to id of the states table)
-        - `name`: VARCHAR(256) (cannot be null)
+   Cities description:
+   - id: INT (unique, auto-generated, cannot be null and is a primary key)
+   - state_id: INT (cannot be null, foreign key that references to id of the states table)
+   - name: VARCHAR(256) (cannot be null)
 
-8. **Cities of California**
+9. **Cities of California**
 
-- `8-cities_of_california_subquery.sql`: MySQL script that lists all the cities of California that can be found in the database `hbtn_0d_usa`, ordered by ascending city id.
+   - **8-cities_of_california_subquery.sql:** MySQL script that lists all the cities of California that can be found in the database hbtn_0d_usa, ordered by ascending city id.
 
-9. **Cities by States**
+10. **Cities by States**
 
-- `9-cities_by_state_join.sql`: MySQL script that lists all cities contained in the database `hbtn_0d_usa`, ordered by ascending city id.
+    - **9-cities_by_state_join.sql:** MySQL script that lists all cities contained in the database hbtn_0d_usa, ordered by ascending city id.
 
-10. **Genre ID by show**
+11. **Genre ID by Show**
 
-- `10-genre_id_by_show.sql`: MySQL script that lists all shows contained in `hbtn_0d_tvshows` that have at least one genre linked, in order of ascending `tv_shows.title` and `tv_show_genres.genre_id`.
+    - **10-genre_id_by_show.sql:** MySQL script that lists all shows contained in hbtn_0d_tvshows that have at least one genre linked, in order of ascending tv_shows.title and tv_show_genres.genre_id.
 
-11. **Genre ID for all shows**
+12. **Genre ID for All Shows**
 
-- `11-genre_id_all_shows.sql`: MySQL script that lists all shows contained in the database `hbtn_0d_tvshows`, in order of ascending `tv_shows.title` and `tv_show_genres.genre_id`. If a show does not have a genre, displays NULL.
+    - **11-genre_id_all_shows.sql:** MySQL script that lists all shows contained in the database hbtn_0d_tvshows, in order of ascending tv_shows.title and tv_show_genres.genre_id. If a show does not have a genre, displays NULL.
 
-12. **No genre**
+13. **No Genre**
 
-- `12-no_genre.sql`: MySQL script that lists all shows contained in `hbtn_0d_tvshows` without a genre linked, in order of ascending `tv_shows.title` and `tv_show_genres.genre_id`.
+    - **12-no_genre.sql:** MySQL script that lists all shows contained in hbtn_0d_tvshows without a genre linked, in order of ascending tv_shows.title and tv_show_genres.genre_id.
 
-13. **Number of shows by genre**
+14. **Number of Shows by Genre**
 
-- `13-count_shows_by_genre.sql`: MySQL script that lists all genres from `hbtn_0d_tvshows` and displays the number of shows linked to each, in order of descending number of shows linked. Does not display a genre if it has no linked shows.
+    - **13-count_shows_by_genre.sql:** MySQL script that lists all genres from hbtn_0d_tvshows and displays the number of shows linked to each, in order of descending number of shows linked. Does not display a genre if it has no linked shows.
 
-14. **My genres**
+15. **My Genres**
 
-- `14-my_genres.sql`: MySQL script that uses the `hbtn_0d_tvshows` database to list all genres of the show Dexter, in order of ascending genre name.
+    - **14-my_genres.sql:** MySQL script that uses the hbtn_0d_tvshows database to list all genres of the show Dexter, in order of ascending genre name.
 
-15. **Only Comedy**
+16. **Only Comedy**
 
-- `15-comedy_only.sql`: MySQL script that lists all comedy shows in the database `hbtn_0d_tvshows`, in order of ascending show title.
+    - **15-comedy_only.sql:** MySQL script that lists all comedy shows in the database hbtn_0d_tvshows, in order of ascending show title.
 
-16. **List shows and genres**
+17. **List Shows and Genres**
 
-- `16-shows_by_genre.sql`: MySQL script that lists all shows, and all genres linked to that show, from the database `hbtn_0d_tvshows`, in order of ascending show title and genre name.
+    - **16-shows_by_genre.sql:** MySQL script that lists all shows and all genres linked to that show, from the database hbtn_0d_tvshows, in order of ascending show title and genre name.
 
-17. **Not my genre**
+18. **Not My Genre**
 
-- `100-not_my_genres.sql`: MySQL script that uses the `hbtn_0d_tvshows` database to list all genres not linked to the show Dexter, in order of ascending genre name.
+    - **100-not_my_genres.sql:** MySQL script that uses the hbtn_0d_tvshows database to list all genres not linked to the show Dexter, in order of ascending genre name.
 
-18. **No Comedy tonight!**
+19. **No Comedy Tonight!**
 
-- `101-not_a_comedy.sql`: MySQL script that lists all shows without the genre comedy in the database `hbtn_0d_tvshows`, in order of ascending show title.
+    - **101-not_a_comedy.sql:** MySQL script that lists all shows without the genre comedy in the database hbtn_0d_tvshows, in order of ascending show title.
 
-19. **Rotten tomatoes**
+20. **Rotten Tomatoes**
 
-- `102-rating_shows.sql`: MySQL script that lists all shows from `hbtn_0d_tvshows_rate` by their rating, in order of descending rating.
+    - **102-rating_shows.sql:** MySQL script that lists all shows from hbtn_0d_tvshows_rate by their rating, in order of descending rating.
 
-20. **Best genre**
+21. **Best Genre**
 
-- `103-rating_genres.sql`: MySQL script that lists all genres in the database `hbtn_0d_tvshows_rate` by their rating, in order of descending rating.
-```
+    - **103-rating_genres.sql:** MySQL script that lists all genres in the database hbtn_0d_tvshows_rate by their rating, in order of descending rating.
