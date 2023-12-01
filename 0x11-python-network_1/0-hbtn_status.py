@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """Fetches https://intranet.hbtn.io/status."""
+import urllib.request
+
 
 if __name__ == "__main__":
-    import urllib.request
-    url = "https://intranet.hbtn.io/status"
-    with urllib.request.urlopen(url) as response:
+    request = urllib.request.Request("https://intranet.hbtn.io/status")
+    with urllib.request.urlopen(request) as response:
         body = response.read()
         print("Body response:")
         print("\t- type: {}".format(type(body)))
