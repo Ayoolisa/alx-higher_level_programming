@@ -2,7 +2,7 @@
 
 This project involved practicing file I/O on Node.js and using the NPM request framework to interact with the [Star Wars](https://swapi.co/), [JSONplaceholder](https://jsonplaceholder.typicode.com/), and [Twitter](https://developer.twitter.com/en/docs/api-reference-index) API's.
 
-### Tasks 📃
+## Tasks 📃
 
 ### 0. Readme
  - [0-readme.js](0-readme.js): JavaScript script that reads and prints the contents of a file.
