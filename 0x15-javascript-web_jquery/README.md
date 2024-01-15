@@ -2,10 +2,10 @@
 
 This was the preparatory project learning how to manipulate the DOM with jQuery before implementing it into our HolbertonBnB project.
 
-### Tests ✔️
+## Tests ✔️
 - [tests](tests): Folder of HTML files for testing DOM manipulation scripts.
 
-### Tasks 📃
+## Tasks 📃
 
 #### 0. No jQuery
  - [0-script.js](0-script.js): JavaScript script that uses `document.querySelector` to update the text color of the HTML tag `HEADER`to red `(#ff0)`.
