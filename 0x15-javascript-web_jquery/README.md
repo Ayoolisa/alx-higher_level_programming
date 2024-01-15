@@ -48,7 +48,7 @@ This was the preparatory project learning how to manipulate the DOM with jQuery 
 #### 11. List, add, remove
  - [101-script.js](101-script.js): JavaScript script that uses jQuery to add, remove, and clear LI elements from a list based on user click input.
  - Adds a new element when the user clicks `DIV#add_item`.
-  - Adds `<li>Item</li>` to the HTML tag `UL.my_list`.
+   - Adds `<li>Item</li>` to the HTML tag `UL.my_list`.
  - Removes the last element when the user clicks `DIV#remove_item`.
  - Clears all elements when the user clicks `DIV#clear_list`.
  - Works when imported in the `HEAD` tag.
